@@ -1,10 +1,10 @@
 const baseEndpoint = `http://www.recipepuppy.com/api`;
-//const proxy = `https://cors-anywhere.herokuapp.com/`;
+const proxy = `https://cors-anywhere.herokuapp.com/`;
 const form = document.querySelector(".search");
 const recipesGrid = document.querySelector(".recipes");
 
 async function fetchRecipes(query) {
-    const res = await fetch(`${baseEndpoint}?q=${query}`);
+    const res = await fetch(`${proxy}${baseEndpoint}?q=${query}`);
     const data = await res.json();
     return data;
 }
